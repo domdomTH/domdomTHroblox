@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดสคริปต์ - Roblox Scripts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/script-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+</head>
+<body class="home-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="home.html">Roblox Scripts</a>
+            </div>
+            <div class="navbar-links">
+                <a href="home.html"><i class="fas fa-home"></i> หน้าหลัก</a>
+                <a href="scripts.html"><i class="fas fa-code"></i> สคริปต์</a>
+                <a href="popular.html"><i class="fas fa-star"></i> ยอดนิยม</a>
+                <a href="admin.html" id="admin-nav-link" style="display: none;"><i class="fas fa-cog"></i> จัดการระบบ</a>
+            </div>
+            <div class="navbar-search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="ค้นหาสคริปต์...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="navbar-user">
+                <span>สวัสดี, <span id="user-name">ผู้ใช้</span>!</span>
+                <button id="logout-btn" class="logout-btn-small"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="script-detail-container">
+            <!-- Script Header -->
+            <div class="script-header">
+                <div class="script-header-content">
+                    <h1 id="script-title">กำลังโหลด...</h1>
+                    <div class="script-meta">
+                        <span class="script-category"><i class="fas fa-folder"></i> <span id="script-category">หมวดหมู่</span></span>
+                        <span class="script-date"><i class="fas fa-calendar"></i> <span id="script-date">วันที่</span></span>
+                        <span class="script-downloads"><i class="fas fa-download"></i> <span id="script-downloads">0</span> ดาวน์โหลด</span>
+                        <span class="script-views"><i class="fas fa-eye"></i> <span id="script-views">0</span> เข้าชม</span>
+                        <span class="script-rating"><i class="fas fa-star"></i> <span id="script-rating">0.0</span></span>
+                    </div>
+                </div>
+                <div class="script-actions">
+                    <button id="download-btn" class="download-btn"><i class="fas fa-download"></i> ดาวน์โหลด</button>
+                    <button id="copy-btn" class="copy-btn"><i class="fas fa-copy"></i> คัดลอกโค้ด</button>
+                </div>
+            </div>
+
+            <!-- Script Content -->
+            <div class="script-content">
+                <div class="script-image">
+                    <img id="script-image" src="https://via.placeholder.com/800x450" alt="Script Image">
+                </div>
+                
+                <div class="script-description">
+                    <h2>รายละเอียด</h2>
+                    <p id="script-description">กำลังโหลด...</p>
+                </div>
+                
+                <div class="script-code">
+                    <h2>โค้ดสคริปต์</h2>
+                    <div class="code-header">
+                        <span>Lua</span>
+                        <button id="copy-code-btn" class="copy-code-btn"><i class="fas fa-copy"></i> คัดลอก</button>
+                    </div>
+                    <pre><code id="script-code" class="language-lua">-- กำลังโหลดโค้ด...</code></pre>
+                </div>
+                
+                <div class="script-tags">
+                    <h2>แท็ก</h2>
+                    <div id="script-tags" class="tags-container">
+                        <!-- จะถูกเติมโดย JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Scripts -->
+            <div class="related-scripts">
+                <h2>สคริปต์ที่เกี่ยวข้อง</h2>
+                <div id="related-scripts" class="scripts-grid">
+                    <!-- จะถูกเติมโดย JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy Success Message -->
+    <div id="copy-success" class="copy-success">
+        <i class="fas fa-check-circle"></i> คัดลอกโค้ดสำเร็จ!
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Roblox Scripts</h2>
+                <p>แหล่งรวมสคริปต์ Roblox คุณภาพสูง</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h3>เมนูหลัก</h3>
+                    <a href="home.html">หน้าหลัก</a>
+                    <a href="scripts.html">สคริปต์</a>
+                    <a href="popular.html">ยอดนิยม</a>
+                </div>
+                <div class="footer-links-column">
+                    <h3>หมวดหมู่</h3>
+                    <a href="scripts.html?category=Fighting">Fighting</a>
+                    <a href="scripts.html?category=Simulator">Simulator</a>
+                    <a href="scripts.html?category=FPS">FPS</a>
+                    <a href="scripts.html?category=Parkour">Parkour</a>
+                </div>
+                <div class="footer-links-column">
+                    <h3>ช่วยเหลือ</h3>
+                    <a href="#">วิธีใช้งาน</a>
+                    <a href="#">คำถามที่พบบ่อย</a>
+                    <a href="#">ติดต่อเรา</a>
+                    <a href="#">นโยบายความเป็นส่วนตัว</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Roblox Scripts. สงวนลิขสิทธิ์ทั้งหมด.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/data-manager.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="js/script-detail.js"></script>
+</body>
+</html>

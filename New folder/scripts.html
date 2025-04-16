@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สคริปต์ทั้งหมด - Roblox Scripts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="home-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="home.html">Roblox Scripts</a>
+            </div>
+            <div class="navbar-links">
+                <a href="home.html"><i class="fas fa-home"></i> หน้าหลัก</a>
+                <a href="scripts.html" class="active"><i class="fas fa-code"></i> สคริปต์</a>
+                <a href="popular.html"><i class="fas fa-star"></i> ยอดนิยม</a>
+                <a href="admin.html" id="admin-nav-link" style="display: none;"><i class="fas fa-cog"></i> จัดการระบบ</a>
+            </div>
+            <div class="navbar-search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="ค้นหาสคริปต์...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="navbar-user">
+                <span>สวัสดี, <span id="user-name">ผู้ใช้</span>!</span>
+                <button id="logout-btn" class="logout-btn-small"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>สคริปต์ทั้งหมด</h1>
+            <p>ค้นพบสคริปต์ Roblox คุณภาพสูงสำหรับเกมโปรดของคุณ</p>
+        </div>
+
+        <!-- Categories Filter -->
+        <div class="categories-filter">
+            <h2>หมวดหมู่</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">ทั้งหมด</button>
+                <button class="filter-btn" data-category="Fighting">Fighting</button>
+                <button class="filter-btn" data-category="Simulator">Simulator</button>
+                <button class="filter-btn" data-category="FPS">FPS</button>
+                <button class="filter-btn" data-category="Parkour">Parkour</button>
+                <button class="filter-btn" data-category="Adventure">Adventure</button>
+                <button class="filter-btn" data-category="Horror">Horror</button>
+            </div>
+        </div>
+
+        <!-- Scripts Grid -->
+        <div class="scripts-section">
+            <div class="section-header">
+                <h2 id="scripts-title">สคริปต์ทั้งหมด</h2>
+                <div class="sort-options">
+                    <label for="sort-select">เรียงตาม:</label>
+                    <select id="sort-select">
+                        <option value="newest">ล่าสุด</option>
+                        <option value="popular">ยอดนิยม</option>
+                        <option value="rating">คะแนนสูงสุด</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="scripts-grid" id="scripts-container">
+                <!-- จะถูกเติมโดย JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" id="prev-page" disabled><i class="fas fa-chevron-left"></i> ก่อนหน้า</button>
+                <div class="page-numbers" id="page-numbers">
+                    <span class="page-number active">1</span>
+                </div>
+                <button class="pagination-btn" id="next-page">ถัดไป <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Roblox Scripts</h2>
+                <p>แหล่งรวมสคริปต์ Roblox คุณภาพสูง</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h3>เมนูหลัก</h3>
+                    <a href="home.html">หน้าหลัก</a>
+                    <a href="scripts.html">สคริปต์</a>
+                    <a href="popular.html">ยอดนิยม</a>
+                </div>
+                <div class="footer-links-column">
+                    <h3>หมวดหมู่</h3>
+                    <a href="scripts.html?category=Fighting">Fighting</a>
+                    <a href="scripts.html?category=Simulator">Simulator</a>
+                    <a href="scripts.html?category=FPS">FPS</a>
+                    <a href="scripts.html?category=Parkour">Parkour</a>
+                </div>
+                <div class="footer-links-column">
+                    <h3>ช่วยเหลือ</h3>
+                    <a href="#">วิธีใช้งาน</a>
+                    <a href="#">คำถามที่พบบ่อย</a>
+                    <a href="#">ติดต่อเรา</a>
+                    <a href="#">นโยบายความเป็นส่วนตัว</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Roblox Scripts. สงวนลิขสิทธิ์ทั้งหมด.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/category-filter.js"></script>
+</body>
+</html>

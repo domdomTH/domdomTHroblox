@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จัดการระบบ - Roblox Scripts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="home.html">Roblox Scripts</a>
+            </div>
+            <div class="navbar-links">
+                <a href="home.html"><i class="fas fa-home"></i> หน้าหลัก</a>
+                <a href="admin.html" class="active"><i class="fas fa-cog"></i> จัดการระบบ</a>
+            </div>
+            <div class="navbar-user">
+                <span>สวัสดี, <span id="user-name">ผู้ใช้</span>!</span>
+                <button id="logout-btn" class="logout-btn-small"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Content -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <div class="admin-user">
+                <div class="admin-avatar">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="admin-info">
+                    <h3 id="admin-name">แอดมิน</h3>
+                    <p>ผู้ดูแลระบบ</p>
+                </div>
+            </div>
+            <ul class="admin-menu">
+                <li class="active" data-tab="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> แดชบอร์ด
+                </li>
+                <li data-tab="scripts">
+                    <i class="fas fa-code"></i> จัดการสคริปต์
+                </li>
+                <li data-tab="categories">
+                    <i class="fas fa-folder"></i> จัดการหมวดหมู่
+                </li>
+                <li data-tab="users">
+                    <i class="fas fa-users"></i> จัดการผู้ใช้
+                </li>
+                <li data-tab="settings">
+                    <i class="fas fa-cog"></i> ตั้งค่าเว็บไซต์
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-content">
+            <!-- Dashboard Tab -->
+            <div class="admin-tab active" id="dashboard-tab">
+                <h1>แดชบอร์ด</h1>
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>สคริปต์ทั้งหมด</h3>
+                            <p class="stat-number">6</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>ผู้ใช้ทั้งหมด</h3>
+                            <p class="stat-number">2</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>ดาวน์โหลดทั้งหมด</h3>
+                            <p class="stat-number">12.5K</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>ยอดเข้าชมวันนี้</h3>
+                            <p class="stat-number">256</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-recent">
+                    <div class="admin-recent-scripts">
+                        <div class="admin-section-header">
+                            <h2>สคริปต์ล่าสุด</h2>
+                            <a href="#" class="view-all" data-tab="scripts">ดูทั้งหมด</a>
+                        </div>
+                        <div class="admin-table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>ชื่อสคริปต์</th>
+                                        <th>หมวดหมู่</th>
+                                        <th>วันที่</th>
+                                        <th>ดาวน์โหลด</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Pet Simulator X Auto Farm</td>
+                                        <td>Simulator</td>
+                                        <td>18/04/2023</td>
+                                        <td>2.1K</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Blox Fruits Hub</td>
+                                        <td>Fighting</td>
+                                        <td>20/04/2023</td>
+                                        <td>5.2K</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bedwars Aimbot & ESP</td>
+                                        <td>FPS</td>
+                                        <td>15/04/2023</td>
+                                        <td>1.5K</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jailbreak Auto Rob</td>
+                                        <td>Adventure</td>
+                                        <td>14/04/2023</td>
+                                        <td>1.8K</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="admin-recent-users">
+                        <div class="admin-section-header">
+                            <h2>ผู้ใช้ล่าสุด</h2>
+                            <a href="#" class="view-all" data-tab="users">ดูทั้งหมด</a>
+                        </div>
+                        <div class="admin-table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>ชื่อผู้ใช้</th>
+                                        <th>ชื่อที่แสดง</th>
+                                        <th>สถานะ</th>
+                                        <th>วันที่สมัคร</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>admin</td>
+                                        <td>แอดมิน</td>
+                                        <td><span class="status admin">แอดมิน</span></td>
+                                        <td>01/04/2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>user</td>
+                                        <td>ผู้ใช้ทั่วไป</td>
+                                        <td><span class="status user">ผู้ใช้</span></td>
+                                        <td>05/04/2023</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scripts Tab -->
+            <div class="admin-tab" id="scripts-tab">
+                <h1>จัดการสคริปต์</h1>
+                <div class="admin-actions">
+                    <button class="admin-btn add-btn" id="add-script-btn">
+                        <i class="fas fa-plus"></i> เพิ่มสคริปต์ใหม่
+                    </button>
+                    <div class="admin-search">
+                        <input type="text" placeholder="ค้นหาสคริปต์...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>รูปภาพ</th>
+                                <th>ชื่อสคริปต์</th>
+                                <th>หมวดหมู่</th>
+                                <th>วันที่</th>
+                                <th>ดาวน์โหลด</th>
+                                <th>คะแนน</th>
+                                <th>การจัดการ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scripts-table-body">
+                            <!-- จะถูกเติมโดย JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal for Add/Edit Script -->
+                <div class="admin-modal" id="script-modal">
+                    <div class="admin-modal-content">
+                        <div class="admin-modal-header">
+                            <h2 id="script-modal-title">เพิ่มสคริปต์ใหม่</h2>
+                            <button class="admin-modal-close">&times;</button>
+                        </div>
+                        <div class="admin-modal-body">
+                            <form id="script-form">
+                                <input type="hidden" id="script-id">
+                                <div class="form-group">
+                                    <label for="script-title">ชื่อสคริปต์</label>
+                                    <input type="text" id="script-title" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="script-description">คำอธิบาย</label>
+                                    <textarea id="script-description" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="script-category">หมวดหมู่</label>
+                                    <select id="script-category" required>
+                                        <option value="">เลือกหมวดหมู่</option>
+                                        <option value="Fighting">Fighting</option>
+                                        <option value="Simulator">Simulator</option>
+                                        <option value="FPS">FPS</option>
+                                        <option value="Parkour">Parkour</option>
+                                        <option value="Adventure">Adventure</option>
+                                        <option value="Horror">Horror</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="script-image">URL รูปภาพ</label>
+                                    <div class="image-input-group">
+                                        <input type="text" id="script-image" required>
+                                        <button type="button" class="admin-btn preview-btn" id="preview-image-btn">แสดงตัวอย่าง</button>
+                                    </div>
+                                    <div class="image-preview" id="image-preview"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="script-code">โค้ดสคริปต์</label>
+                                    <textarea id="script-code" rows="5" required></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="admin-btn cancel-btn">ยกเลิก</button>
+                                    <button type="submit" class="admin-btn save-btn">บันทึก</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Tab -->
+            <div class="admin-tab" id="categories-tab">
+                <h1>จัดการหมวดหมู่</h1>
+                <div class="admin-actions">
+                    <button class="admin-btn add-btn" id="add-category-btn">
+                        <i class="fas fa-plus"></i> เพิ่มหมวดหมู่ใหม่
+                    </button>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>ไอคอน</th>
+                                <th>ชื่อหมวดหมู่</th>
+                                <th>จำนวนสคริปต์</th>
+                                <th>การจัดการ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><i class="fas fa-gamepad"></i></td>
+                                <td>เกมส์ทั้งหมด</td>
+                                <td>6</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><i class="fas fa-fist-raised"></i></td>
+                                <td>Fighting</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><i class="fas fa-building"></i></td>
+                                <td>Simulator</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><i class="fas fa-crosshairs"></i></td>
+                                <td>FPS</td>
+                                <td>1</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><i class="fas fa-running"></i></td>
+                                <td>Parkour</td>
+                                <td>1</td>
+                                <td>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal for Add/Edit Category -->
+                <div class="admin-modal" id="category-modal">
+                    <div class="admin-modal-content">
+                        <div class="admin-modal-header">
+                            <h2 id="category-modal-title">เพิ่มหมวดหมู่ใหม่</h2>
+                            <button class="admin-modal-close">&times;</button>
+                        </div>
+                        <div class="admin-modal-body">
+                            <form id="category-form">
+                                <input type="hidden" id="category-id">
+                                <div class="form-group">
+                                    <label for="category-name">ชื่อหมวดหมู่</label>
+                                    <input type="text" id="category-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category-icon">ไอคอน (Font Awesome Class)</label>
+                                    <input type="text" id="category-icon" placeholder="fas fa-gamepad" required>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="admin-btn cancel-btn">ยกเลิก</button>
+                                    <button type="submit" class="admin-btn save-btn">บันทึก</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div class="admin-tab" id="users-tab">
+                <h1>จัดการผู้ใช้</h1>
+                <div class="admin-actions">
+                    <button class="admin-btn add-btn" id="add-user-btn">
+                        <i class="fas fa-plus"></i> เพิ่มผู้ใช้ใหม่
+                    </button>
+                    <div class="admin-search">
+                        <input type="text" placeholder="ค้นหาผู้ใช้...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>ชื่อผู้ใช้</th>
+                                <th>ชื่อที่แสดง</th>
+                                <th>สถานะ</th>
+                                <th>วันที่สมัคร</th>
+                                <th>การจัดการ</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table-body">
+                            <!-- จะถูกเติมโดย JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Modal for Add/Edit User -->
+                <div class="admin-modal" id="user-modal">
+                    <div class="admin-modal-content">
+                        <div class="admin-modal-header">
+                            <h2 id="user-modal-title">เพิ่มผู้ใช้ใหม่</h2>
+                            <button class="admin-modal-close">&times;</button>
+                        </div>
+                        <div class="admin-modal-body">
+                            <form id="user-form">
+                                <input type="hidden" id="user-id">
+                                <div class="form-group">
+                                    <label for="user-username">ชื่อผู้ใช้</label>
+                                    <input type="text" id="user-username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user-displayname">ชื่อที่แสดง</label>
+                                    <input type="text" id="user-displayname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user-password">รหัสผ่าน</label>
+                                    <input type="password" id="user-password" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user-role">สถานะ</label>
+                                    <select id="user-role" required>
+                                        <option value="user">ผู้ใช้ทั่วไป</option>
+                                        <option value="admin">ผู้ดูแลระบบ</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" class="admin-btn cancel-btn">ยกเลิก</button>
+                                    <button type="submit" class="admin-btn save-btn">บันทึก</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="admin-tab" id="settings-tab">
+                <h1>ตั้งค่าเว็บไซต์</h1>
+                <form id="settings-form">
+                    <div class="settings-section">
+                        <h2>ตั้งค่าทั่วไป</h2>
+                        <div class="form-group">
+                            <label for="site-title">ชื่อเว็บไซต์</label>
+                            <input type="text" id="site-title" value="Roblox Scripts">
+                        </div>
+                        <div class="form-group">
+                            <label for="site-description">คำอธิบายเว็บไซต์</label>
+                            <textarea id="site-description" rows="3">แหล่งรวมสคริปต์ Roblox คุณภาพสูง ฟรี และอัพเดทล่าสุด</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="site-logo">URL โลโก้</label>
+                            <input type="text" id="site-logo" value="">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>ตั้งค่าหน้าแรก</h2>
+                        <div class="form-group">
+                            <label for="home-title">หัวข้อหน้าแรก</label>
+                            <input type="text" id="home-title" value="ยินดีต้อนรับสู่ Roblox Scripts">
+                        </div>
+                        <div class="form-group">
+                            <label for="home-subtitle">คำอธิบายหน้าแรก</label>
+                            <input type="text" id="home-subtitle" value="แหล่งรวมสคริปต์ Roblox คุณภาพสูง ฟรี และอัพเดทล่าสุด">
+                        </div>
+                        <div class="form-group">
+                            <label for="scripts-per-page">จำนวนสคริปต์ต่อหน้า</label>
+                            <input type="number" id="scripts-per-page" value="6" min="1" max="24">
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>ตั้งค่าการติดต่อ</h2>
+                        <div class="form-group">
+                            <label for="contact-email">อีเมล</label>
+                            <input type="email" id="contact-email" value="contact@robloxscripts.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-discord">Discord</label>
+                            <input type="text" id="contact-discord" value="discord.gg/robloxscripts">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="admin-btn save-btn">บันทึกการตั้งค่า</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

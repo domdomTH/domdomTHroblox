@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Scripts - คลังสคริปต์ Roblox</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="home-page">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="home.html">Roblox Scripts</a>
+            </div>
+            <div class="navbar-links">
+                <a href="home.html" class="active"><i class="fas fa-home"></i> หน้าหลัก</a>
+                <a href="scripts.html"><i class="fas fa-code"></i> สคริปต์</a>
+                <a href="popular.html"><i class="fas fa-star"></i> ยอดนิยม</a>
+                <a href="admin.html" id="admin-nav-link" style="display: none;"><i class="fas fa-cog"></i> จัดการระบบ</a>
+            </div>
+            <div class="navbar-search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="ค้นหาสคริปต์...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="navbar-user">
+                <span>สวัสดี, <span id="user-name">ผู้ใช้</span>!</span>
+                <button id="logout-btn" class="logout-btn-small"><i class="fas fa-sign-out-alt"></i> ออกจากระบบ</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>ยินดีต้อนรับสู่ Roblox Scripts</h1>
+            <p>แหล่งรวมสคริปต์ Roblox คุณภาพสูง ฟรี และอัพเดทล่าสุด</p>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories-section">
+            <h2>หมวดหมู่</h2>
+            <div class="categories">
+                <a href="scripts.html" class="category-item">
+                    <i class="fas fa-gamepad"></i>
+                    <span>เกมส์ทั้งหมด</span>
+                </a>
+                <a href="scripts.html?category=Parkour" class="category-item">
+                    <i class="fas fa-running"></i>
+                    <span>Parkour</span>
+                </a>
+                <a href="scripts.html?category=Fighting" class="category-item">
+                    <i class="fas fa-fist-raised"></i>
+                    <span>Fighting</span>
+                </a>
+                <a href="scripts.html?category=Simulator" class="category-item">
+                    <i class="fas fa-building"></i>
+                    <span>Simulator</span>
+                </a>
+                <a href="scripts.html?category=FPS" class="category-item">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>FPS</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scripts Section -->
+        <div class="scripts-section">
+            <div class="section-header">
+                <h2>สคริปต์ล่าสุด</h2>
+                <a href="scripts.html" class="view-all">ดูทั้งหมด <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="scripts-grid" id="scripts-container">
+                <!-- Script Card 1 -->
+                <div class="script-card">
+                    <div class="script-image">
+                        <img src="https://tr.rbxcdn.com/e9b0640f26e3c602a1f6082f26f09691/768/432/Image/Png" alt="Blox Fruits Script">
+                        <div class="script-category">Fighting</div>
+                    </div>
+                    <div class="script-info">
+                        <h3>Blox Fruits Auto Farm</h3>
+                        <p class="script-description">สคริปต์ออโต้ฟาร์มสำหรับ Blox Fruits ใช้งานง่าย ไม่มีแบน</p>
+                        <div class="script-meta">
+                            <span><i class="fas fa-download"></i> 1.2K</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-calendar"></i> 12/04/2023</span>
+                        </div>
+                        <a href="#" class="script-button">ดูรายละเอียด</a>
+                    </div>
+                </div>
+
+                <!-- Script Card 2 -->
+                <div class="script-card">
+                    <div class="script-image">
+                        <img src="https://tr.rbxcdn.com/5aa5b9b7a25c88e1b0f2306f8ab3fdaf/768/432/Image/Png" alt="Adopt Me Script">
+                        <div class="script-category">Simulator</div>
+                    </div>
+                    <div class="script-info">
+                        <h3>Adopt Me Auto Farm</h3>
+                        <p class="script-description">สคริปต์ช่วยเก็บไอเทมและเลี้ยงสัตว์อัตโนมัติใน Adopt Me</p>
+                        <div class="script-meta">
+                            <span><i class="fas fa-download"></i> 985</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                            <span><i class="fas fa-calendar"></i> 10/04/2023</span>
+                        </div>
+                        <a href="#" class="script-button">ดูรายละเอียด</a>
+                    </div>
+                </div>
+
+                <!-- Script Card 3 -->
+                <div class="script-card">
+                    <div class="script-image">
+                        <img src="https://tr.rbxcdn.com/c8d3bad9e2b5d9d3c06985d724ff4e6d/768/432/Image/Png" alt="Bedwars Script">
+                        <div class="script-category">FPS</div>
+                    </div>
+                    <div class="script-info">
+                        <h3>Bedwars Aimbot & ESP</h3>
+                        <p class="script-description">สคริปต์ช่วยเล็ง และมองทะลุกำแพงสำหรับเกม Bedwars</p>
+                        <div class="script-meta">
+                            <span><i class="fas fa-download"></i> 1.5K</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-calendar"></i> 15/04/2023</span>
+                        </div>
+                        <a href="#" class="script-button">ดูรายละเอียด</a>
+                    </div>
+                </div>
+
+                <!-- Script Card 4 -->
+                <div class="script-card">
+                    <div class="script-image">
+                        <img src="https://tr.rbxcdn.com/f0269c40fadfe6f8e44a1299a9563054/768/432/Image/Png" alt="Parkour Script">
+                        <div class="script-category">Parkour</div>
+                    </div>
+                    <div class="script-info">
+                        <h3>Ninja Legends Auto Farm</h3>
+                        <p class="script-description">สคริปต์ออโต้ฟาร์มสำหรับ Ninja Legends ฟาร์มเงินและอัพเกรดอัตโนมัติ</p>
+                        <div class="script-meta">
+                            <span><i class="fas fa-download"></i> 876</span>
+                            <span><i class="fas fa-star"></i> 4.3</span>
+                            <span><i class="fas fa-calendar"></i> 08/04/2023</span>
+                        </div>
+                        <a href="#" class="script-button">ดูรายละเอียด</a>
+                    </div>
+                </div>
+
+                <!-- Script Card 5 -->
+                <div class="script-card">
+                    <div class="script-image">
+                        <img src="https://tr.rbxcdn.com/e9b0640f26e3c602a1f6082f26f09691/768/432/Image/Png" alt="Pet Simulator X Script">
+                        <div class="script-category">Simulator</div>
+                    </div>
+                    <div class="script-info">
+                        <h3>Pet Simulator X Auto Farm</h3>
+                        <p class="script-description">สคริปต์ออโต้ฟาร์มสำหรับ Pet Simulator X ฟาร์มเพชรและเปิดไข่อัตโนมัติ</p>
+                        <div class="script-meta">
+                            <span><i class="fas fa-download"></i> 2.1K</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                            <span><i class="fas fa-calendar"></i> 18/04/2023</span>
+                        </div>
+                        <a href="#" class="script-button">ดูรายละเอียด</a>
+                    </div>
+                </div>
+
+                <!-- Script Card 6 -->
+                <div class="script-card">
+                    <div class="script-image">
+                        <img src="https://tr.rbxcdn.com/5aa5b9b7a25c88e1b0f2306f8ab3fdaf/768/432/Image/Png" alt="Jailbreak Script">
+                        <div class="script-category">Adventure</div>
+                    </div>
+                    <div class="script-info">
+                        <h3>Jailbreak Auto Rob</h3>
+                        <p class="script-description">สคริปต์ปล้นอัตโนมัติสำหรับ Jailbreak ปล้นทุกที่โดยไม่ต้องขับรถเอง</p>
+                        <div class="script-meta">
+                            <span><i class="fas fa-download"></i> 1.8K</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                            <span><i class="fas fa-calendar"></i> 14/04/2023</span>
+                        </div>
+                        <a href="#" class="script-button">ดูรายละเอียด</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Section -->
+        <div class="popular-section">
+            <div class="section-header">
+                <h2>สคริปต์ยอดนิยม</h2>
+                <a href="popular.html" class="view-all">ดูทั้งหมด <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="popular-scripts">
+                <!-- Popular Script 1 -->
+                <div class="popular-script-card">
+                    <div class="rank">1</div>
+                    <div class="popular-script-image">
+                        <img src="https://tr.rbxcdn.com/e9b0640f26e3c602a1f6082f26f09691/768/432/Image/Png" alt="Popular Script">
+                    </div>
+                    <div class="popular-script-info">
+                        <h3>Blox Fruits Hub</h3>
+                        <p>สคริปต์รวมฟังก์ชันทั้งหมดสำหรับ Blox Fruits</p>
+                        <div class="popular-script-meta">
+                            <span><i class="fas fa-download"></i> 5.2K</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                    <a href="#" class="popular-script-button">ดูรายละเอียด</a>
+                </div>
+
+                <!-- Popular Script 2 -->
+                <div class="popular-script-card">
+                    <div class="rank">2</div>
+                    <div class="popular-script-image">
+                        <img src="https://tr.rbxcdn.com/5aa5b9b7a25c88e1b0f2306f8ab3fdaf/768/432/Image/Png" alt="Popular Script">
+                    </div>
+                    <div class="popular-script-info">
+                        <h3>Arsenal Aimbot</h3>
+                        <p>สคริปต์ช่วยเล็งอัตโนมัติสำหรับเกม Arsenal</p>
+                        <div class="popular-script-meta">
+                            <span><i class="fas fa-download"></i> 4.8K</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                    <a href="#" class="popular-script-button">ดูรายละเอียด</a>
+                </div>
+
+                <!-- Popular Script 3 -->
+                <div class="popular-script-card">
+                    <div class="rank">3</div>
+                    <div class="popular-script-image">
+                        <img src="https://tr.rbxcdn.com/c8d3bad9e2b5d9d3c06985d724ff4e6d/768/432/Image/Png" alt="Popular Script">
+                    </div>
+                    <div class="popular-script-info">
+                        <h3>Doors Script</h3>
+                        <p>สคริปต์ช่วยเล่นเกม Doors แสดงกับดักและไอเทมทั้งหมด</p>
+                        <div class="popular-script-meta">
+                            <span><i class="fas fa-download"></i> 3.9K</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                    </div>
+                    <a href="#" class="popular-script-button">ดูรายละเอียด</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Roblox Scripts</h2>
+                <p>แหล่งรวมสคริปต์ Roblox คุณภาพสูง</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h3>เมนูหลัก</h3>
+                    <a href="home.html">หน้าหลัก</a>
+                    <a href="scripts.html">สคริปต์</a>
+                    <a href="popular.html">ยอดนิยม</a>
+                </div>
+                <div class="footer-links-column">
+                    <h3>หมวดหมู่</h3>
+                    <a href="scripts.html?category=Fighting">Fighting</a>
+                    <a href="scripts.html?category=Simulator">Simulator</a>
+                    <a href="scripts.html?category=FPS">FPS</a>
+                    <a href="scripts.html?category=Parkour">Parkour</a>
+                </div>
+                <div class="footer-links-column">
+                    <h3>ช่วยเหลือ</h3>
+                    <a href="#">วิธีใช้งาน</a>
+                    <a href="#">คำถามที่พบบ่อย</a>
+                    <a href="#">ติดต่อเรา</a>
+                    <a href="#">นโยบายความเป็นส่วนตัว</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Roblox Scripts. สงวนลิขสิทธิ์ทั้งหมด.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

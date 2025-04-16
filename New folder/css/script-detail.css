@@ -1,0 +1,251 @@
+/* Script Detail Styles */
+.script-detail-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+/* Script Header */
+.script-header {
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.script-header-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.script-header h1 {
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.script-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.script-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.script-meta i {
+    color: #007bff;
+}
+
+.script-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.download-btn, .copy-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.download-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+.copy-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.copy-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Script Content */
+.script-content {
+    padding: 30px;
+}
+
+.script-image {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.script-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.script-description, .script-code, .script-tags {
+    margin-bottom: 30px;
+}
+
+.script-description h2, .script-code h2, .script-tags h2, .related-scripts h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.script-description h2::after, .script-code h2::after, .script-tags h2::after, .related-scripts h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+}
+
+.script-description p {
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* Code Section */
+.script-code {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #343a40;
+    color: white;
+}
+
+.copy-code-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.copy-code-btn:hover {
+    color: #007bff;
+}
+
+.script-code pre {
+    margin: 0;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.script-code code {
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Tags */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.tag:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Related Scripts */
+.related-scripts {
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+/* Copy Success Message */
+.copy-success {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.copy-success.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.copy-success i {
+    font-size: 18px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .script-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .script-actions {
+        width: 100%;
+    }
+    
+    .download-btn, .copy-btn {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .script-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
