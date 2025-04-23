@@ -1,0 +1,376 @@
+/* Responsive Styles for NOARZ */
+
+/* Base Mobile Styles */
+@media (max-width: 768px) {
+    /* Container */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Header */
+    header {
+        padding: 15px 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .site-logo {
+        height: 35px;
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+    }
+
+    /* News Grid */
+    .news-card {
+        flex-direction: column;
+    }
+
+    .cover-photo-thumbnail {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .content-wrapper {
+        width: 100%;
+    }
+
+    /* News Detail */
+    .news-detail {
+        padding: 15px;
+    }
+
+    .news-detail h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Forms */
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+    }
+
+    /* Admin Dashboard */
+    .admin-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-card {
+        margin-bottom: 15px;
+    }
+
+    /* Community Section */
+    .community-section {
+        grid-template-columns: 1fr;
+    }
+
+    .community-card {
+        margin-bottom: 20px;
+    }
+
+    /* Image Gallery */
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Buttons */
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    /* Floating Social */
+    .floating-social {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .site-logo {
+        height: 30px;
+    }
+
+    .news-excerpt {
+        font-size: 0.9rem;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Horizontal Navigation Mode */
+.horizontal-nav ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    position: static !important;
+    transform: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.horizontal-nav ul li {
+    width: auto !important;
+    margin: 0 5px !important;
+    border: none !important;
+}
+
+.horizontal-nav ul li a {
+    padding: 5px 10px !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+}
+
+/* Mobile Navigation Menu (Hamburger) */
+@media (max-width: 768px) {
+    /* Hide regular nav and show mobile nav */
+    nav.mobile-hidden ul {
+        display: none;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #00ffff;
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        cursor: pointer;
+    }
+
+    /* Fixed position when scrolled */
+    .menu-toggle-fixed {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        transform: none;
+    }
+
+    /* Hover and active states */
+    .menu-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+        border-color: rgba(0, 255, 255, 0.5);
+    }
+
+    .menu-toggle:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    .menu-toggle-fixed:active {
+        transform: scale(0.95);
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column;
+        width: 80%;
+        max-width: 300px;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+        overflow-y: auto;
+        max-height: 80vh;
+        position: fixed;
+        top: 70px;
+        right: 15px;
+        z-index: 99;
+        transform: translateY(-110%);
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(0, 255, 255, 0.2);
+    }
+
+    nav.menu-visible ul {
+        transform: translateY(0);
+    }
+
+    /* Menu items */
+    nav ul li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: left;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+        font-size: 1rem;
+        color: #fff;
+    }
+
+    /* Active state */
+    nav ul li a.active {
+        background-color: rgba(0, 255, 255, 0.1);
+    }
+
+    nav ul li a.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 25%;
+        height: 50%;
+        width: 3px;
+        background-color: #00ffff;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(0, 255, 255, 0.05);
+    }
+
+    nav ul li a:active {
+        background-color: rgba(0, 255, 255, 0.15);
+    }
+
+    /* Icons in navigation */
+    .nav-icon {
+        margin-right: 10px;
+        font-size: 1.1rem;
+        min-width: 20px;
+        text-align: center;
+        color: #00ffff;
+    }
+
+    /* Username in nav */
+    .nav-username {
+        display: inline;
+        font-size: 0.85rem;
+        opacity: 0.8;
+        margin-left: 5px;
+    }
+
+    /* Simple scrollbar */
+    nav ul::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    nav ul::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul::-webkit-scrollbar-thumb {
+        background: rgba(0, 255, 255, 0.3);
+        border-radius: 5px;
+    }
+
+    /* Menu overlay */
+    .menu-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 90;
+        display: none;
+    }
+}
+
+/* Landscape Mode */
+@media (max-width: 768px) and (orientation: landscape) {
+    .news-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    header, footer, nav, .floating-social, .button-group {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+    }
+
+    .news-detail {
+        padding: 0;
+        border: none;
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        background-size: 50px 50px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    /* Already dark by default, but could add specific dark mode enhancements here */
+}

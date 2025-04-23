@@ -1,0 +1,186 @@
+/* Enhanced Navigation Styles */
+:root {
+    --nav-bg: rgba(0, 0, 0, 0.5);
+    --nav-border: rgba(0, 255, 255, 0.3);
+    --nav-glow: 0 0 10px rgba(0, 255, 255, 0.3);
+    --nav-hover-glow: 0 0 15px rgba(0, 255, 255, 0.5);
+    --nav-active-glow: 0 0 20px rgba(255, 0, 255, 0.6);
+    --nav-text: rgba(255, 255, 255, 0.8);
+    --nav-active-text: #ffffff;
+    --nav-hover-text: #ffffff;
+    --nav-icon-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Main Navigation Container */
+header nav {
+    background-color: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 8px;
+    padding: 0;
+    margin: 15px 0;
+    box-shadow: var(--nav-glow);
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Navigation Border Glow Effect */
+header nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+        rgba(0, 255, 255, 0.8),
+        rgba(255, 0, 255, 0.8),
+        rgba(255, 255, 0, 0.8),
+        rgba(0, 255, 255, 0.8));
+    z-index: 1;
+}
+
+/* Navigation List */
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+/* Navigation Items */
+header nav ul li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Links */
+header nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Navigation Link Hover Effect */
+header nav ul li a:hover {
+    color: var(--nav-hover-text);
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: var(--nav-hover-glow);
+}
+
+/* Navigation Link Active State */
+header nav ul li a.active {
+    color: var(--nav-active-text);
+    background-color: rgba(255, 0, 255, 0.2);
+    box-shadow: var(--nav-active-glow);
+}
+
+/* Navigation Link Hover/Active Underline Effect */
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--nav-border), transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+/* Navigation Icons */
+.nav-icon {
+    margin-right: 8px;
+    font-size: 1.2em;
+    color: var(--nav-icon-color);
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover .nav-icon,
+header nav ul li a.active .nav-icon {
+    transform: scale(1.2);
+    color: var(--nav-hover-text);
+}
+
+/* Username in Logout Link */
+.nav-username {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li a {
+        padding: 12px 15px;
+        justify-content: center;
+    }
+
+    .nav-icon {
+        margin-right: 5px;
+    }
+}
+
+/* Dropdown Menu (for future use) */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--nav-bg);
+    min-width: 200px;
+    box-shadow: var(--nav-glow);
+    border: 1px solid var(--nav-border);
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

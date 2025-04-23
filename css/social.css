@@ -1,0 +1,208 @@
+/* Social Media Integration Styles */
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.social-icon.youtube {
+    border-color: #ff0000;
+}
+
+.social-icon.youtube:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.social-icon.discord {
+    border-color: #5865F2;
+}
+
+.social-icon.discord:hover {
+    background-color: rgba(88, 101, 242, 0.2);
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.5);
+}
+
+/* Community Section */
+.community-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .community-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.community-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.community-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 1;
+}
+
+.community-card.youtube::before {
+    background: linear-gradient(90deg, #ff0000, #ff5500);
+}
+
+.community-card.discord::before {
+    background: linear-gradient(90deg, #5865F2, #7289DA);
+}
+
+.community-card h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.community-card h3 .card-icon {
+    margin-right: 10px;
+    font-size: 1.6rem;
+}
+
+.community-card p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.community-card .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.community-card.youtube .btn {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.community-card.youtube .btn:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.community-card.discord .btn {
+    background-color: rgba(88, 101, 242, 0.2);
+    color: #5865F2;
+    border: 1px solid #5865F2;
+}
+
+.community-card.discord .btn:hover {
+    background-color: rgba(88, 101, 242, 0.3);
+    box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+}
+
+.btn-icon {
+    margin-right: 8px;
+}
+
+/* Discord Widget */
+.discord-widget {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* YouTube Embed */
+.youtube-embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Floating Social Buttons */
+.floating-social {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 99;
+}
+
+.floating-social .social-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Pulse Animation for Floating Buttons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.floating-social .social-icon {
+    animation: pulse 2s infinite;
+}
+
+.floating-social .social-icon.youtube {
+    animation-delay: 0.5s;
+}
